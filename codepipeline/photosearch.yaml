@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: Lambda NodeJS starter project
+Resources:
+  Function:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index_photos.lambda_handler
+      Runtime: python3.8
+      CodeUri: ./Lambda/
+      FunctionName: "lambda-index_photos"
+  Function2:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: search_photos.lambda_handler
+      Runtime: python3.8
+      CodeUri: ./Lambda/
+      FunctionName: "lambda-search-photos"

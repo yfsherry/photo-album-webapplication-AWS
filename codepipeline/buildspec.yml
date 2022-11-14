@@ -1,0 +1,11 @@
+version: 0.2  
+phases:  
+  install:
+    commands:
+      - export BUCKET=codepipeline-us-east-1-787918618809
+      - aws cloudformation package --template-file photosearch.yaml --s3-bucket lambda-func-pipeline-bucket --output-template-file outputtemplate.yaml
+artifacts:  
+  type: zip
+  files:
+    - photosearch.yaml
+    - outputtemplate.yaml
